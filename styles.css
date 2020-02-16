@@ -1,0 +1,19 @@
+body {
+    font-family: 'Karla', sans-serif;
+}
+
+form {
+    margin: 0.5em;
+}
+#weatherResults, #forecastResults{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-gap: 1rem;
+    /* text-align: center !important; */
+}
+
+.current, .forecast {
+    border: 2px solid black;
+    text-align: center !important;
+
+}

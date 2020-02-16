@@ -14,7 +14,7 @@ const url = "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&u
     }).then(function(json) {
         //put some of the json data in html
         let results = "";
-        results += '<h2>Current Weather in ' + json.name + "</h2>";
+        results += '<div class = "current"><h2>Current Weather in ' + json.name + ":</h2>";
         for (let i=0; i < json.weather.length; i++) {
           results += '<img src="http://openweathermap.org/img/w/' + json.weather[i].icon + '.png"/>';
         }
@@ -22,13 +22,13 @@ const url = "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&u
         results += "<p>";
         // add temp range: min-max
         results += "Low: " + json.main.temp_min + "&deg;F, High: " + json.main.temp_max + "&deg;F<br/>";
-        results += "Wind: " + json.wind.speed + " mph<br/>"; //adding wind data
+        results += "Wind Speed: " + json.wind.speed + " mph<br/>Looks Like: "; //adding wind data
         for (let i=0; i < json.weather.length; i++) {
             results += json.weather[i].description;
             if (i !== json.weather.length - 1)
                 results += ", "
         }
-        results += "</p>";
+        results += "</p></div>";
         // update html div id with data. 
         document.getElementById("weatherResults").innerHTML = results;
         //console.log(json);
@@ -42,9 +42,18 @@ const url = "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&u
     }).then(function(json) {
         let forecast = "<h2>Forecast:</h2>";
       for (let i=0; i < json.list.length; i++) {
-        forecast += "<h2>" + moment(json.list[i].dt_txt).format('MMMM Do YYYY, h:mm:ss a') + "</h2>";
-        forecast += "<p>Temperature: " + json.list[i].main.temp + "</p>";
+
+        forecast += "<div class = 'forecast'><h2>" + moment(json.list[i].dt_txt).format('MMMM Do YYYY, h:mm:ss a') + "</h2>";
+        // forecast += "<p>Temperature: " + json.list[i].main.temp + "</p>";
         forecast += '<img src="http://openweathermap.org/img/w/' + json.list[i].weather[0].icon + '.png"/>'
+        forecast += '<h2>' + json.list[i].main.temp + " &deg;F</h2>";
+       // forecast += '<p>Low: ' + json.list[i].main.temp_min + "&deg;F, High: " + json.list[i].main.temp_max + "&deg;F<br/>"
+        forecast += "<p>Wind Speed: " + json.list[i].wind.speed + " mph<br/>Looks Like: "; //adding wind data
+        forecast += json.list[i].weather[0].description //try this out?
+
+        //results += json.weather[i].description;
+
+        forecast += '</p></div>'; //end p tag and div
       }
       document.getElementById("forecastResults").innerHTML = forecast;
       console.log(json);
