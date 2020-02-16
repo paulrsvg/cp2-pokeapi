@@ -14,7 +14,7 @@ const url = "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&u
     }).then(function(json) {
         //put some of the json data in html
         let results = "";
-        results += '<h2>Weather in ' + json.name + "</h2>";
+        results += '<h2>Current Weather in ' + json.name + "</h2>";
         for (let i=0; i < json.weather.length; i++) {
           results += '<img src="http://openweathermap.org/img/w/' + json.weather[i].icon + '.png"/>';
         }
@@ -34,6 +34,21 @@ const url = "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&u
         //console.log(json);
     });
 
+    // forecast code here
+    const url2 = "http://api.openweathermap.org/data/2.5/forecast?q=" + value + ", US&units=imperial" + "&APPID=" + APIKEY;
+    fetch(url2)
+    .then(function(response) {
+      return response.json();
+    }).then(function(json) {
+        let forecast = "<h2>Forecast:</h2>";
+      for (let i=0; i < json.list.length; i++) {
+        forecast += "<h2>" + moment(json.list[i].dt_txt).format('MMMM Do YYYY, h:mm:ss a') + "</h2>";
+        forecast += "<p>Temperature: " + json.list[i].main.temp + "</p>";
+        forecast += '<img src="http://openweathermap.org/img/w/' + json.list[i].weather[0].icon + '.png"/>'
+      }
+      document.getElementById("forecastResults").innerHTML = forecast;
+      console.log(json);
+    });
   
    // console.log(results);
 
