@@ -1,6 +1,6 @@
 body {
     font-family: 'Karla', sans-serif;
-    /* background-color: #f9edcc; */
+    background-color: #E0FFFF;
 
     max-width: 42em;
     margin: 2em auto; /*maybe not auto? hmm*/
@@ -8,7 +8,8 @@ body {
     font-size:18px;
     /* color: #444;
     background-color: #dcd5cb; */
-    background-color: #fff9f2; /*   //an off white here from the eap wellness thing */
+    /* background-color: #fff9f2;  */
+    /*   //an off white here from the eap wellness thing */
     color: #002639;  /*   an almost black */
     padding:0 10px;
 }
@@ -25,6 +26,11 @@ form {
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     grid-gap: 1rem;
     /* text-align: center !important; */
+}
+
+img {
+    /* background: #F0F8FF; */
+    /* border: 0.5rem outset pink; lol looks like a btn */
 }
 
 .current, .forecast {
