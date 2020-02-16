@@ -1,36 +1,23 @@
 body {
     font-family: 'Karla', sans-serif;
-    background-color: #E0FFFF;
-
+    background-color: #E0FFFF; /*lightcyan works ok*/
     max-width: 42em;
     margin: 2em auto; /*maybe not auto? hmm*/
     line-height:1.4em;
     font-size:18px;
-    /* color: #444;
-    background-color: #dcd5cb; */
-    /* background-color: #fff9f2;  */
-    /*   //an off white here from the eap wellness thing */
     color: #002639;  /*   an almost black */
     padding:0 10px;
 }
 
-
-
-
-
 form {
     margin: 0.5em;
 }
+
 #weatherResults, #forecastResults{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     grid-gap: 1rem;
     /* text-align: center !important; */
-}
-
-img {
-    /* background: #F0F8FF; */
-    /* border: 0.5rem outset pink; lol looks like a btn */
 }
 
 .current, .forecast {
@@ -42,14 +29,3 @@ img {
 .footer{
     text-align: center !important;  
 }
-
-/* media queries */
-/* @media (max-width: 600px) {
-  
-    #weatherResults, #forecastResults {
-      width: 100%;  
-    }
-  
-  
-  
-  } */
