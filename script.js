@@ -40,7 +40,7 @@ const url = "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&u
     .then(function(response) {
       return response.json();
     }).then(function(json) {
-        let forecast = "<h2>Forecast:</h2>";
+        let forecast = "<h2>5-Day Forecast:</h2>";
       for (let i=0; i < json.list.length; i++) {
 
         forecast += "<div class = 'forecast'><h2>" + moment(json.list[i].dt_txt).format('MMMM Do YYYY, h:mm:ss a') + "</h2>";
