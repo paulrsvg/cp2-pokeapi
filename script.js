@@ -20,14 +20,18 @@ const url = "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&u
         }
         results += '<h2>' + json.main.temp + " &deg;F</h2>";
         results += "<p>";
+        // add temp range: min-max
+        results += "Low: " + json.main.temp_min + "&deg;F, High: " + json.main.temp_max + "&deg;F<br/>";
+        results += "Wind: " + json.wind.speed + " mph<br/>"; //adding wind data
         for (let i=0; i < json.weather.length; i++) {
             results += json.weather[i].description;
             if (i !== json.weather.length - 1)
                 results += ", "
         }
         results += "</p>";
+        // update html div id with data. 
         document.getElementById("weatherResults").innerHTML = results;
-        console.log(json);
+        //console.log(json);
     });
 
   
