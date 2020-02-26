@@ -9,9 +9,6 @@ body {
     padding:0 10px;
 }
 
-form {
-    margin: 0.5em;
-}
 
 #weatherResults, #forecastResults{
     display: grid;
