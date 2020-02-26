@@ -1,16 +1,28 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url("https://code.superpencil.com/pokemon-js/fonts/pokemon-normal.woff2") format("woff2"), url("https://code.superpencil.com/pokemon-js/fonts/pokemon-normal.woff2") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Karla', sans-serif;
+    /* font-family: 'Karla', sans-serif; */
+    font-family: 'Pokemon',  monospace;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    font-size:16px;
+
     background-color: #E0FFFF; /*lightcyan works ok*/
     max-width: 42em;
     margin: 2em auto; /*maybe not auto? hmm*/
-    line-height:1.4em;
-    font-size:18px;
+    line-height:2em;
+    /* font-size:18px; */
     color: #002639;  /*   an almost black */
     padding:0 10px;
 }
 
 
-#weatherResults, #forecastResults{
+#results{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     grid-gap: 1rem;
@@ -18,9 +30,10 @@ body {
 }
 
 .frame {
-    border: 2px solid black;
+    /* border: 2px double solid black; */
+    border: outset #f33;
     text-align: center !important;
-
+    padding: 1em;
 }
 
 .footer{

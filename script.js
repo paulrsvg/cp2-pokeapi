@@ -64,7 +64,7 @@ document.getElementById("get-pkmn").addEventListener("click", function(event) {
     let results = "";
     document.getElementById("results").innerHTML = results;
 
-    results += "<div class = 'frame'><h1> It's " + myJson.name + " </h1>;
+    results += "<div class = 'frame'><h2>Hey! A wild " + myJson.name.toUpperCase() + " appeared to be chillin' just outside of town!</h2>";
     results += "</div>";
 
 
