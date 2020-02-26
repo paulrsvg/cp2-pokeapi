@@ -64,7 +64,11 @@ document.getElementById("get-pkmn").addEventListener("click", function(event) {
     let results = "";
     document.getElementById("results").innerHTML = results;
 
-    results += "<h1> It's " + myJson.name + " </h1>";
+    results += "<div class = 'frame'><h1> It's " + myJson.name + " </h1>;
+    results += "</div>";
+
+
+
     document.getElementById("results").innerHTML = results;
   });
 
