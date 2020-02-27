@@ -12,12 +12,12 @@ body {
     -webkit-font-smoothing: none;
     font-size:16px;
 
-    background-color: #E0FFFF; /*lightcyan works ok*/
+    background-color: #e0f8d0 ; /*gameboy green*/
     max-width: 42em;
     margin: 2em auto; /*maybe not auto? hmm*/
     line-height:2em;
     /* font-size:18px; */
-    color: #002639;  /*   an almost black */
+    color: #081820;  /*   gameboy almost black */
     padding:0 10px;
 }
 
@@ -31,7 +31,7 @@ body {
 
 .frame {
     /* border: 2px double solid black; */
-    border: outset #f33;
+    border: outset #346856;
     text-align: center !important;
     padding: 1em;
 }

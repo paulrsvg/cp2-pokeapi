@@ -1,4 +1,5 @@
-// document.getElementById("weatherSubmit").addEventListener("click", function(event) {
+//    weather app api stuff
+//     document.getElementById("weatherSubmit").addEventListener("click", function(event) {
 //     event.preventDefault();
 //     const value = document.getElementById("weatherInput").value;
 //     if (value === "")
@@ -40,7 +41,7 @@
 
 
 
-//stuff from codepen - jquery
+//stuff from codepen - jquery - now ported to fetch
 
 
 document.getElementById("get-pkmn").addEventListener("click", function(event) {
